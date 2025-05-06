@@ -1,0 +1,461 @@
+:root {
+  --primary-color: #9d4edd;
+  --secondary-color: #7b2cbf;
+  --accent-color: #c77dff;
+  --background-color: #0c0c0e;
+  --surface-color: #18181b;
+  --surface-color-hover: #27272a;
+  --text-color: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --number-btn-color: #27272a;
+  --number-btn-hover: #3d3d40;
+  --operator-btn-color: #7b2cbf;
+  --operator-btn-hover: #9d4edd;
+  --special-btn-color: #3d3d40;
+  --special-btn-hover: #4d4d50;
+  --equal-btn-color: #9d4edd;
+  --equal-btn-hover: #c77dff;
+  --brand-gradient: linear-gradient(135deg, #9d4edd, #7b2cbf);
+  --button-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  --glass-background: rgba(24, 24, 27, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glow-effect: 0 0 10px rgba(157, 78, 221, 0.5);
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+/* Animasi background */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(157, 78, 221, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(123, 44, 191, 0.25) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(199, 125, 255, 0.15) 0%, transparent 55%);
+  z-index: -2;
+  animation: backgroundShift 20s ease-in-out infinite alternate;
+  filter: blur(3px);
+}
+
+/* Particles animation */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.06) 0, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 180px 180px, 120px 120px, 80px 80px;
+  background-position: 0 0;
+  z-index: -1;
+  animation: particlesMove 25s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes particlesMove {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, 50% 50%, 20% 20%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+}
+
+.calculator {
+  width: 100%;
+  background-color: var(--glass-background);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px var(--shadow-color);
+  position: relative;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brand {
+  background: var(--brand-gradient);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.brand i {
+  font-size: 22px;
+}
+
+.result {
+  background-color: transparent;
+  padding: 25px 20px;
+  text-align: right;
+  position: relative;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.history {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 10px;
+  min-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.output {
+  font-size: 40px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  text-shadow: 0 0 5px rgba(157, 78, 221, 0.3);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.btn {
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-color);
+  background-color: var(--number-btn-color);
+  box-shadow: var(--button-shadow);
+  transition: all var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 65px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.number {
+  background-color: var(--number-btn-color);
+}
+
+.number:hover {
+  background-color: var(--number-btn-hover);
+}
+
+.operator {
+  background-color: var(--operator-btn-color);
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(123, 44, 191, 0.3);
+}
+
+.operator:hover {
+  background-color: var(--operator-btn-hover);
+  box-shadow: 0 6px 15px rgba(123, 44, 191, 0.4);
+}
+
+.special {
+  background-color: var(--special-btn-color);
+}
+
+.special:hover {
+  background-color: var(--special-btn-hover);
+}
+
+.equal {
+  background-color: var(--equal-btn-color);
+  grid-column: span 2;
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+}
+
+.equal:hover {
+  background-color: var(--equal-btn-hover);
+  box-shadow: 0 6px 20px rgba(157, 78, 221, 0.5);
+}
+
+.toggle-theme {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(45, 45, 45, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--button-shadow);
+  z-index: 10;
+  transition: all var(--transition-speed) ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid var(--glass-border);
+}
+
+.toggle-theme:hover {
+  transform: rotate(30deg);
+  background-color: rgba(60, 60, 60, 0.9);
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+}
+
+.toggle-theme i {
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(30, 30, 35, 0.6);
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.footer i {
+  color: #ff4d8f;
+}
+
+/* Animasi ketika tombol ditekan */
+@keyframes button-press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-pressed {
+  animation: button-press 0.15s ease-in-out;
+}
+
+/* Tooltip untuk key bindings */
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover .tooltip {
+  opacity: 1;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 400px) {
+  .calculator {
+    width: 95%;
+  }
+  
+  .btn {
+    padding: 14px;
+    font-size: 20px;
+    min-height: 58px;
+  }
+  
+  .output {
+    font-size: 36px;
+  }
+}
+
+/* Animasi untuk hasil */
+@keyframes result-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-animation {
+  animation: result-appear 0.3s ease-out;
+}
+
+/* Efek hover pada tombol-tombol */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:active::after {
+  opacity: 1;
+  transform: scale(20, 20) translate(-50%, -50%);
+  transition: all 0.5s ease-out;
+}
+
+/* Particles container */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ripple effect untuk tombol */
+.btn span {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: ripple 0.6s;
+  opacity: 0;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Neon glow effect untuk tombol operator dan equal */
+.operator, .equal {
+  position: relative;
+  overflow: hidden;
+}
+
+.operator::before, .equal::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--brand-gradient);
+  z-index: -1;
+  border-radius: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.operator:hover::before, .equal:hover::before {
+  opacity: 0.4;
+} 

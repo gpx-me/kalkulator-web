@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="calculator">
+      <div class="brand">
+        <i class="fas fa-calculator"></i>
+        <span>Ivan <b>Calculator</b></span>
+        <div class="toggle-theme">
+          <i class="fas fa-sparkles"></i>
+        </div>
+      </div>
+      <div class="result">
+        <div class="history" id="history"></div>
+        <div class="output" id="output">0</div>
+      </div>
+      <div class="buttons">
+        <button class="btn special" data-action="clear">C</button>
+        <button class="btn special" data-action="delete"><i class="fas fa-backspace"></i></button>
+        <button class="btn operator" data-value="%">%</button>
+        <button class="btn operator" data-value="/"><i class="fas fa-divide"></i></button>
+        
+        <button class="btn number" data-value="7">7</button>
+        <button class="btn number" data-value="8">8</button>
+        <button class="btn number" data-value="9">9</button>
+        <button class="btn operator" data-value="*"><i class="fas fa-times"></i></button>
+        
+        <button class="btn number" data-value="4">4</button>
+        <button class="btn number" data-value="5">5</button>
+        <button class="btn number" data-value="6">6</button>
+        <button class="btn operator" data-value="-"><i class="fas fa-minus"></i></button>
+        
+        <button class="btn number" data-value="1">1</button>
+        <button class="btn number" data-value="2">2</button>
+        <button class="btn number" data-value="3">3</button>
+        <button class="btn operator" data-value="+"><i class="fas fa-plus"></i></button>
+        
+        <button class="btn number" data-value="0">0</button>
+        <button class="btn number" data-value=".">.</button>
+        <button class="btn equal" data-action="calculate"><i class="fas fa-equals"></i></button>
+      </div>
+    </div>
+    <div class="social-buttons">
+      <a href="https://instagram.com/offduty.home" target="_blank" class="social-btn instagram">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+      <a href="https://wa.me/6285747409383" target="_blank" class="social-btn whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+    <style>
+      .social-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+        perspective: 800px;
+      }
+      
+      .social-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 16px;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--text-color);
+        background: var(--glass-background);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        min-width: 160px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .social-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        transform: skewX(-20deg);
+        transition: all 0.5s ease;
+      }
+      
+      .social-btn::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        animation: shimmer 3s infinite;
+      }
+      
+      @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+      
+      .social-btn:hover::before {
+        left: 100%;
+      }
+      
+      .social-btn i {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+      }
+      
+      .social-btn span {
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      
+      .social-btn.instagram {
+        background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        border: none;
+      }
+      
+      .social-btn.whatsapp {
+        background: linear-gradient(45deg, #25d366, #128c7e);
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        border: none;
+      }
+      
+      .social-btn:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 8px var(--accent-color);
+        letter-spacing: 1px;
+      }
+      
+      .social-btn:hover i {
+        transform: rotate(15deg) scale(1.1);
+      }
+      
+      .social-btn:active {
+        transform: translateY(-2px) scale(0.98);
+      }
+      
+      @keyframes subtle-pulse {
+        0% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); }
+        50% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 5px var(--accent-color); }
+        100% { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); }
+      }
+      
+      .social-btn:hover {
+        animation: subtle-pulse 1.5s infinite;
+      }
+      
+      @media (max-width: 600px) {
+        .social-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        
+        .social-btn {
+          width: 80%;
+          margin-bottom: 10px;
+          padding: 10px 20px;
+          font-size: 13px;
+        }
+        
+        .social-btn:hover {
+          transform: translateY(-3px) scale(1.01);
+        }
+        
+        .social-btn i {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html> 
