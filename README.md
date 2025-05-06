@@ -129,10 +129,10 @@ npm start - # Jalankan server development
   <p>atau via e-wallet:</p>
   
   <p>
-    <a href="#" target="_blank">
+    <a href="https://wa.me/6285747409383?text=Give+payment,+I+will+donate" target="_blank">
       <img src="https://img.shields.io/badge/-DANA-0065F2?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiwyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyek0xMiA1YzEuNjYgMCAzIDEuMzQgMyAzcy0xLjM0IDMtMyAzLTMtMS4zNC0zLTMgMS4zNC0zIDMtM3ptMCA5YTUuOTkgNS45OSAwIDAgMSAtNS4yNSAtMy4wOGMuOTYgLTEuODIgMi44OCAtMyA1LjIgLTNzNC4yNyAxLjE4IDUuMiAzQTUuOTkgNS45OSAwIDAgMSAxMiAxNHoiPjwvcGF0aD48L3N2Zz4=" alt="DANA: username" height="38">
     </a>
-    <a href="#" target="_blank">
+    <a href="https://wa.me/6285747409383?text=Give+payment,+I+will+donate" target="_blank">
       <img src="https://img.shields.io/badge/-GOPAY-01C35C?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyek0xMiA1YzEuNjYgMCAzIDEuMzQgMyAzcy0xLjM0IDMtMyAzLTMtMS4zNC0zLTMgMS4zNC0zIDMtM3ptMCA5YTUuOTkgNS45OSAwIDAgMSAtNS4yNSAtMy4wOGMuOTYgLTEuODIgMi44OCAtMyA1LjIgLTNzNC4yNyAxLjE4IDUuMiAzQTUuOTkgNS45OSAwIDAgMSAxMiAxNHoiPjwvcGF0aD48L3N2Zz4=" alt="GoPay: username" height="38">
     </a>
   </p>
@@ -142,7 +142,7 @@ npm start - # Jalankan server development
 
 <div align="center">
   <p>
-    <img src="https://img.shields.io/badge/-%E2%9D%A4%EF%B8%8F%20Dibuat%20dengan%20cinta%20%E2%9D%A4%EF%B8%8F-ff69b4?style=for-the-badge" alt="Creadit oleh Ivan Hidayat"/>
+    <img src="https://img.shields.io/badge/-%F0%9F%9B%A0%EF%B8%8F%20Creadit%20Ivan%20Hidayat%20-1a2b3c?style=for-the-badge" alt="Creadit Ivan Hidayat"/>
   </p>
   <p><i>untuk memberikan pengalaman kalkulator terbaik</i></p>
   <p>
