@@ -50,12 +50,10 @@
 <div align="center">
   
   ```bash
-# Instalasi dependency
-npm install
+npm install - # Instalasi dependency
   ```
   ```bash
-# Jalankan server development
-npm start
+npm start - # Jalankan server development
   ```
   
   <p>Buka browser dan akses <code>http://localhost:3000</code></p>
