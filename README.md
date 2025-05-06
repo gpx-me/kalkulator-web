@@ -20,7 +20,7 @@
   <table>
     <tr>
       <td><img src="https://img.shields.io/badge/-Premium-gold?style=flat-square"/></td>
-      <td>Desain modern dan mewah dengan detail premium</td>
+      <td>Desain modern dan mewah dengan detail premium yang simpel</td>
     </tr>
     <tr>
       <td><img src="https://img.shields.io/badge/-Dark%20Mode-1a1a1a?style=flat-square"/></td>
@@ -56,7 +56,7 @@ npm install - # Instalasi dependency
 npm start - # Jalankan server development
   ```
   
-  <p>Buka browser dan akses <code>http://localhost:3000</code></p>
+  <p>Buka browser dan akses Port: <code>3000</code> Anda dapat mengatur atau mengubah port tersebut.</p>
 </div>
 
 ## <img src="https://img.shields.io/badge/-%F0%9F%8C%90-black?style=flat-square"/> Deployment ke Vercel
