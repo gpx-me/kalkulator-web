@@ -122,7 +122,7 @@ npm start - # Jalankan server development
 <div align="center">
   <p>Jika aplikasi ini bermanfaat untuk Anda, pertimbangkan untuk memberikan dukungan:</p>
   
-  <a href="https://www.buymeacoffee.com/username" target="_blank">
+  <a href="https://www.buymeacoffee.com/sebretcepd" target="_blank">
     <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="200">
   </a>
   
