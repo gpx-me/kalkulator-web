@@ -142,7 +142,7 @@ npm start - # Jalankan server development
 
 <div align="center">
   <p>
-    <img src="https://img.shields.io/badge/-%E2%9D%A4%EF%B8%8F%20Dibuat%20dengan%20cinta%20%E2%9D%A4%EF%B8%8F-ff69b4?style=for-the-badge" alt="Dibuat dengan cinta"/>
+    <img src="https://img.shields.io/badge/-%E2%9D%A4%EF%B8%8F%20Dibuat%20dengan%20cinta%20%E2%9D%A4%EF%B8%8F-ff69b4?style=for-the-badge" alt="Creadit oleh Ivan Hidayat"/>
   </p>
   <p><i>untuk memberikan pengalaman kalkulator terbaik</i></p>
   <p>
