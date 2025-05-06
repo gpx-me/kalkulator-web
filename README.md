@@ -52,7 +52,8 @@
   ```bash
   # Instalasi dependency
   npm install
-  
+  ```
+  ```bash
   # Jalankan server development
   npm start
   ```
